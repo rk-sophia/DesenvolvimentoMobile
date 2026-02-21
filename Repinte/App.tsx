@@ -4,8 +4,10 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
+      <Image source={requireNativeModule('./assets/imagem.jpg')} style={styles.logo} requiredMode="contain"/>
       <Text>HELLO WORLD!</Text>
       <StatusBar style="auto" />
+      <Text style={styles.header}>Olá Mundo!</Text>
     </View>
   );
 }
@@ -13,8 +15,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffc23fff',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  imagem: {
+    height:400,
+  },
+  logo: {
+    width: 300,
+    height:
   },
 });
