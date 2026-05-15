@@ -1,58 +1,20 @@
-
-//Menu
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-// Ícones
-import Ionicons from '@expo/vector-icons/Ionicons';
-//Menu SOBRE
-import telaSobre from "./telas/Sobre"
-
-
-//Menu  - BOTTOM TABS
-const Tab = createBottomTabNavigator();
-function Menu(){
-  return <Tab.Navigator
-              screenOptions={({route})=>({
-                  tabBarIcon:({focused, color, size})=>{
-                    let iconName: any;
-
-                    if(route.name === "Sobre"){
-                      iconName = focused ? 
-                      'home' : 
-                      'home-outline';
-                    }
-                    else if(route.name === "Tarefas"){
-                      iconName = focused ? 
-                      'clipboard' : 
-                      'clipboard-outline';
-                    }
-                    else if(route.name === "Perfil"){
-                      iconName = focused ? 
-                      'person' : 
-                      'person-outline';
-                    }
-                    else if(route.name === "Solicitação"){
-                      iconName = focused ? 
-                      'create' : 
-                      'create-outline';
-                    }
-                    return <Ionicons name={iconName} size={size} color={color}/>
-                  },
-                  headerShown: false,
-                  tabBarActiveTintColor: 'blue',
-                  tabBarInactiveTintColor: 'orange',
-                })}
-              >
-                <Tab.Screen name="Sobre" component={telaSobre}/>
-                <Tab.Screen name="Solicitação" component={telaSobre}/>
-                <Tab.Screen name="Tarefas" component={telaSobre}/>
-                <Tab.Screen name="Perfil" component={telaSobre}/>
-        </Tab.Navigator>
-}
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
-  return <NavigationContainer>
-            <Menu />
-        </NavigationContainer>
-
+  return (
+    <View style={styles.container}>
+      <Text>Open up App.tsx to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
